@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Sidebar from './components/Sidebar';
+import ChatWindow from './components/ChatWindow';
+import {
+  ChatHistoryContext,
+  MessageHistoryContext,
+} from './components/context';
 
 function App() {
+  const [file, setFile] = useState(null);
+  const [serviceProvider, setServiceProvider] = useState('openai');
+  const [queryHistory, setQueryHistory] = useState(['Hi there! 👋']);
+  const [responseHistory, setResponseHistory] = useState([
+    'Hello! How can I assist you today?',
+  ]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="app">
+      <Sidebar
+        serviceProvider={serviceProvider}
+        setServiceProvider={setServiceProvider}
+      />
+      <ChatHistoryContext.Provider value={{ queryHistory, responseHistory }}>
+        <MessageHistoryContext.Provider
+          value={{ setQueryHistory, setResponseHistory }}
         >
-          Learn React
-        </a>
-      </header>
+          <ChatWindow file={file} />
+        </MessageHistoryContext.Provider>
+      </ChatHistoryContext.Provider>
     </div>
   );
 }
