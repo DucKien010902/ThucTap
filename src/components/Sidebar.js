@@ -13,7 +13,6 @@ function Sidebar({
 
   return (
     <div style={{ display: 'flex', alignItems: 'flex-start' }}>
-      {/* Nút Ẩn/Hiện Sidebar */}
       <button
         className="button-next"
         onClick={() => setIsSidebarVisible(!isSidebarVisible)}
@@ -25,7 +24,6 @@ function Sidebar({
         )}
       </button>
 
-      {/* Sidebar */}
       {isSidebarVisible && (
         <div className="sidebar" style={{ transition: 'all 0.3s ease' }}>
           <FileUpload />
