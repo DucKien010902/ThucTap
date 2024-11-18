@@ -62,15 +62,15 @@ function ChatWindow({ file }) {
 
   return (
     <div className="chat-window">
-      <h1 style={{ marginTop: '10px', marginBottom: '10px', fontSize: '40px' }}>
+      <h1 style={{ marginTop: '10px', marginBottom: '0px', fontSize: '40px' }}>
         GenAI Career Assistant - 👨‍💼
       </h1>
-      <p style={{ marginTop: '5px', marginBottom: '20px' }}>
+      <p style={{ marginTop: '0px', marginBottom: '20px' }}>
         <a
           href="https://www.linkedin.com/in/aman-varyani-885725181/"
-          style={{ color: 'blue' }}
+          style={{ color: 'blue', textDecoration: 'none' }}
         >
-          Connect with me on LinkedIn
+          [Connect with me on LinkedIn]
         </a>
       </p>
       <div className="chat-history">

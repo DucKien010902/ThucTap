@@ -14,6 +14,19 @@ body {
   box-shadow: 4px 0px 12px rgba(0, 0, 0, 0.1);
 }
 
+.button-next {
+  background-color: '#007bff';
+  border: none;
+  color: 'white';
+  padding: 5px;
+  cursor: pointer;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  margin-right: 5px;
+}
 .file-upload-container {
   display: flex;
   justify-content: center;
@@ -119,19 +132,20 @@ body {
 }
 
 .highlight-note {
-  font-weight: bold; /* Chữ đậm */
-  font-size: 1.3em; /* Kích thước lớn hơn */
-  color: red; /* Màu sắc nổi bật */
+  font-weight: bold;
+  font-size: 1.3em;
+  color: red;
 }
 
 /*CSS PHAN CHATWINDOW*/
 
 .chat-window {
-  margin-left: 100px;
+  margin-left: 50px;
 }
 
 .chat-history {
-  max-height: 300px;
+  min-height: 150px;
+  max-height: 320px;
   overflow-y: auto;
   padding: 10px;
   border: 1px solid #ddd;
